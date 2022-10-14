@@ -15,6 +15,7 @@ use App\Http\Controllers\SchoolController;
 */
 
 Route::get('/', [SchoolController::class, 'index']);
+Route::get('/staff/{pageNumber}', [SchoolController::class, 'staff']);
 Route::get('/classes/{staffId}', [SchoolController::class, 'classes']);
 Route::get('/students/{classId}', [SchoolController::class, 'students']);
 // Route::prefix('school')->group(function () {

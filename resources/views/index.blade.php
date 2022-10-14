@@ -29,6 +29,7 @@
 								</tr>
 						@endforeach
 					</x-table>
+					<x-pagination class="float-right" :meta="$meta"/>
 				</div>
 			</div>
 		</div>
