@@ -4,11 +4,11 @@
 This is the first time I've used Laravel & Tailwind but I've choosen to use these to complete the tech test to demonstrate how quickly I can pick up different technologies and use them to complete a task. But please expect some beginner mistakes :)
 
 ## Run the code
-# PHP/Laravel
+### PHP/Laravel
 * composer install
 * php artisan serve
 
-# Vite/Tailwind
+### Vite/Tailwind
 * npm install
 * npm run dev
 
