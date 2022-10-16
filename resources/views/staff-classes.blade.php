@@ -7,12 +7,12 @@
   @vite('resources/css/app.css')
   @livewireStyles
 </head>
-<body>
-	<div class="container">
-		<div class="col-6">
-			<div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
-			<div class="bg-white overflow-hidden shadow-sa sm:rounded-lg">
-				<div class="p-6 bg-white border-b border-gray-200">
+<body class="h-screen">
+<x-header>Classes</x-header>
+<div class="flex flex-col">
+	<div class="overflow-x-auto sm:-mx-6 lg:-mx-8">
+		<div class="py-2 inline-block min-w-full sm:px-6 lg:px-8">
+			<div class="overflow-x-auto">
 					@empty($classData)
 					<p>No Classes found</p>
 					@else
@@ -26,15 +26,14 @@
 								<tr class="cursor-pointer">
 									<x-table-col>{{ $element['id'] }}</x-table-col>
 									<x-table-col>{{ $element['name'] }}</x-table-col>
-									<x-table-col><a href="{{url('students/'.$element['id'].'')}}" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">Search Students</a></x-table-col>
+									<x-table-col><a href="{{url('students/'.$element['id'].'')}}" class="inline-flex items-center py-2 px-4 ml-3 text-sm font-medium text-gray-500 bg-white rounded-lg border border-gray-300 hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white">Search Students</a></x-table-col>
 								</tr>
 						@endforeach
 					</x-table>
 					@endempty
-				</div>
 			</div>
 		</div>
-		</div>
 	</div>
+</div>
 </body>
 <html>
