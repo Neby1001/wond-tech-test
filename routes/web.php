@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\SchoolController;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,6 +14,12 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', [SchoolController::class, 'index']);
+Route::get('/staff/{pageNumber}', [SchoolController::class, 'staff']);
+Route::get('/classes/{staffId}', [SchoolController::class, 'classes']);
+Route::get('/students/{classId}', [SchoolController::class, 'students']);
+// Route::prefix('school')->group(function () {
+// 	Route::get('getAllStaff', [SchoolController::class, 'getAllStaff'])->name('getAllStaff');
+// });
+
+// Route::resource('school', SchoolController::class);
