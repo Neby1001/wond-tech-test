@@ -9,11 +9,7 @@ class SchoolController extends Controller
 {
 	public function index(WondeService $wondeService)
 	{
-		$endpointVars = array('endpointName' => 'employees');
-		$staff = $wondeService->sendWondeAPIRequest($endpointVars);
-		//$meta =  $wondeService->getMeta();
-
-		return view('index', ['staff' => $staff->data, 'meta' => $staff->meta->pagination]);
+		return view('index');
 	}
 
 	public function staff(String $pageNumber, WondeService $wondeService)
@@ -21,9 +17,7 @@ class SchoolController extends Controller
 		$endpointVars = array('endpointName' => 'employees?page=' . $pageNumber);
 		$staff = $wondeService->sendWondeAPIRequest($endpointVars);
 
-		return view('index', ['staff' => $staff->data, 'meta' => $staff->meta->pagination]);
-		// $nextPage = (int)$pageNumber++;
-		// echo $nextPage;
+		return view('staff', ['staff' => $staff->data, 'meta' => $staff->meta->pagination]);
 	}
 
 	public function classes(String $staffId, WondeService $wondeService)

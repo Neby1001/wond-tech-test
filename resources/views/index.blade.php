@@ -7,34 +7,10 @@
   @vite('resources/css/app.css')
   @livewireStyles
 </head>
-<body>
-@livewire('livewire-ui-modal')
-<div class="container">
-    <div class="col-6">
-        <livewire:counter /> 
-		<div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
-			<div class="bg-white overflow-hidden shadow-sa sm:rounded-lg">
-				<div class="p-6 bg-white border-b border-gray-200">
-					<x-table>
-						<x-slot name="header">
-							<x-table-col>First Name</x-table-col>
-							<x-table-col>Last Name</x-table-col>
-							<x-table-col>Search</x-table-col>
-						</x-slot>
-						@foreach ($staff as $s)
-								<tr class="cursor-pointer">
-									<x-table-col>{{ $s->forename }}</x-table-col>
-									<x-table-col>{{ $s->surname }}</x-table-col>
-									<x-table-col><a href="{{url('classes/'.$s->id.'')}}" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">View Classes</a></x-table-col>
-								</tr>
-						@endforeach
-					</x-table>
-					<x-pagination class="float-right" :meta="$meta"/>
-				</div>
-			</div>
-		</div>
-    </div>
-</div>
-	@livewireScripts
+<body class="flex h-screen justify-center items-center bg-gradient-to-b from-blue-200 to-blue-500">
+	<div class="text-center bg-blue-500 p-32 rounded"> <!-- ⬅️ THIS DIV WILL BE CENTERED -->
+		<h1 class="text-3xl text-white p-5">School Staff Directory</h1>
+		<a href="{{url('staff/1')}}" class="bg-slate-200 hover:bg-slate-400 text-black font-bold py-2 px-4 rounded cursor-pointer">Launch</a>
+	</div>
 </body>
 </html>

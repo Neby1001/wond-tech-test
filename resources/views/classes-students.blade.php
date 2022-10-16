@@ -7,12 +7,12 @@
   @vite('resources/css/app.css')
   @livewireStyles
 </head>
-<body>
-	<div class="container">
-		<div class="col-6">
-			<div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
-			<div class="bg-white overflow-hidden shadow-sa sm:rounded-lg">
-				<div class="p-6 bg-white border-b border-gray-200">
+<body class="h-screen">
+<x-header>Students</x-header>
+<div class="flex flex-col">
+	<div class="overflow-x-auto sm:-mx-6 lg:-mx-8">
+		<div class="py-2 inline-block min-w-full sm:px-6 lg:px-8">
+			<div class="overflow-x-auto">
 					@empty($studentArray)
 					<p>No Students found</p>
 					@else
@@ -27,10 +27,9 @@
 						@endforeach
 					</x-table>
 					@endempty
-				</div>
 			</div>
 		</div>
-		</div>
 	</div>
+</div>
 </body>
 <html>
