@@ -13,7 +13,7 @@
 	<div class="overflow-x-auto sm:-mx-6 lg:-mx-8">
 		<div class="py-2 inline-block min-w-full sm:px-6 lg:px-8">
 			<div class="overflow-x-auto">
-					@empty($classData)
+					@empty($classArray)
 					<p>No Classes found</p>
 					@else
 					<x-table>
@@ -22,7 +22,7 @@
 							<x-table-col>Class Name</x-table-col>
 							<x-table-col>View Students</x-table-col>
 						</x-slot>
-						@foreach ($classData as $element)
+						@foreach ($classArray as $element)
 								<tr class="cursor-pointer">
 									<x-table-col>{{ $element['id'] }}</x-table-col>
 									<x-table-col>{{ $element['name'] }}</x-table-col>
